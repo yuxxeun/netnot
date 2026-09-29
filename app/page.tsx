@@ -49,14 +49,14 @@ import { Receipt } from "@/components/receipt/receipt-preview";
 import Footer from "@/components/footer";
 
 export default function Page() {
-  const [store, setStore] = useState("Morrow Goods"),
+  const [store, setStore] = useState("Mezo Store (JOYCO)"),
     [title, setTitle] = useState("Payment receipt"),
     [order, setOrder] = useState("4829"),
     // Placeholder statis dulu; diganti ke tanggal Asia/Jakarta yang
     // sebenarnya di useEffect supaya render pertama server & client
     // tetap identik (hindari hydration mismatch).
     [date, setDate] = useState(DEFAULT_DATE_PLACEHOLDER),
-    [payment, setPayment] = useState("Visa •••• 4242"),
+    [payment, setPayment] = useState("QRIS Mezo Store"),
     [currency, setCurrency] = useState("IDR"),
     [theme, setTheme] = useState(themes[3]),
     [thanks, setThanks] = useState<[string, string]>(thankYouMessages[0]),
@@ -103,11 +103,11 @@ export default function Page() {
     reader.readAsDataURL(file);
   };
   const reset = () => {
-    setStore("Morrow Goods");
+    setStore("Mezo Store (JOYCO)");
     setTitle("Payment receipt");
     setOrder("4829");
     setDate(getJakartaDate()); // kembali ke tanggal hari ini (Asia/Jakarta)
-    setPayment("Visa •••• 4242");
+    setPayment("QRIS Mezo Store");
     setCurrency("IDR");
     setItems(initialItems);
     setTheme(themes[3]);
